@@ -7,33 +7,32 @@
  
   <body>
     <div style="width: 50vh; height: 50vh; position: absolute; left: 50%, top: 50%; transform: tanslate(-50%, -50%);">
-      
+      <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+      <script>
+          window.botpressWebChat.init({
+              'botId': '0117a5ac-ecbd-4ec3-b89f-d77824cd334f',
+              'clientId': '0117a5ac-ecbd-4ec3-b89f-d77824cd334f',
+       
+              'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
+              "messagingUrl": "https://messaging.botpress.cloud",
+       
+                    'botName': 'DE Bot',
+       
+              "containerWidth": "100%25",
+              "layoutWidth": "100%25",
+       
+              "hideWidget": true,
+              "disableAnimations": true,
+          });
+       
+          window.botpressWebChat.onEvent(
+              function () {
+                  window.botpressWebChat.sendEvent({ type: "show" });
+              },
+              ["LIFECYCLE.LOADED"]
+          );
+      </script>
     </div>
-<script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
-<script>
-    window.botpressWebChat.init({
-        'botId': '0117a5ac-ecbd-4ec3-b89f-d77824cd334f',
-        'clientId': '0117a5ac-ecbd-4ec3-b89f-d77824cd334f',
- 
-        'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
-        "messagingUrl": "https://messaging.botpress.cloud",
- 
-              'botName': 'DE Bot',
- 
-        "containerWidth": "100%25",
-        "layoutWidth": "100%25",
- 
-        "hideWidget": true,
-        "disableAnimations": true,
-    });
- 
-    window.botpressWebChat.onEvent(
-        function () {
-            window.botpressWebChat.sendEvent({ type: "show" });
-        },
-        ["LIFECYCLE.LOADED"]
-    );
-</script>
   </body>
 
   
