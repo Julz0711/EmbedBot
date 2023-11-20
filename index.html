@@ -1,39 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>update v3</title>
+    <title>update v5</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+    <style>
+      .center-div {
+        width: 100%;
+        height: 80vh;
+        background-color: rgb(102, 71, 255);
+        border-radius: 15px;
+        padding: 5px;
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+ 
+      @media only screen and (max-width: 600px) {
+        .center-div {
+          height: 40vh;
+          width: 8100%;
+        }
+      }
+    </style>
   </head>
  
   <body>
-    <div style="width: 50vh; height: 50vh; position: absolute; left: 50%, top: 50%; transform: tanslate(-50%, -50%);">
-      <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
-      <script>
+    <div style={height: 70vh}>
+     <iframe
+        style="border: none;"
+        srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
+        <script>
           window.botpressWebChat.init({
+              'composerPlaceholder': 'Nachricht schreiben...',
+              'botConversationDescription': 'XMAS DieEinheit Bot',
+              'botName': 'DE Bot',
               'botId': '0117a5ac-ecbd-4ec3-b89f-d77824cd334f',
-              'clientId': '0117a5ac-ecbd-4ec3-b89f-d77824cd334f',
-       
               'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
-              "messagingUrl": "https://messaging.botpress.cloud",
-       
-                    'botName': 'DE Bot',
-       
-              "containerWidth": "100%25",
-              "layoutWidth": "100%25",
-       
-              "hideWidget": true,
-              "disableAnimations": true,
+              'messagingUrl': 'https://messaging.botpress.cloud',
+              'clientId': '0117a5ac-ecbd-4ec3-b89f-d77824cd334f',
+              'enableConversationDeletion': true,
+              'showPoweredBy': true,
+              'className': 'webchatIframe',
+              'containerWidth': '100%25',
+              'layoutWidth': '100%25',
+              'hideWidget': true,
+              'showCloseButton': false,
+              'disableAnimations': true,
+              'closeOnEscape': false,
+              'showConversationsButton': false,
+              'enableTranscriptDownload': false,
+              'stylesheet':'https://webchat-styler-css.botpress.app/prod/code/83c7385d-94f8-4006-935d-9f761c96b8cc/v17236/style.css'
           });
-       
-          window.botpressWebChat.onEvent(
-              function () {
-                  window.botpressWebChat.sendEvent({ type: "show" });
-              },
-              ["LIFECYCLE.LOADED"]
-          );
-      </script>
+        window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
+        </script></body>"
+        width="100%"
+        height="100%"
+      ></iframe>
     </div>
   </body>
-
-  
 </html>
